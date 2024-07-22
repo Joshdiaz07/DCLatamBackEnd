@@ -1,0 +1,40 @@
+
+<div class="formularioBuscar">
+  <h2>Find Registry</h2>
+  <form [formGroup] = "employeeForm" (ngSubmit) = "buscar()">
+    <div class="form-group">
+      <label>Id</label>
+      <input type="number" formControlName="id" class="form-control">
+    </div>
+    <button type="button" class="btn btn-primary">Buscar</button>
+  </form>
+</div>
+
+<div class="formularioBuscar">
+  <h2>Employee Registered</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>employee_name</th>
+        <th>employee_salary</th>
+        <th>employee_age</th>
+        <th>profile_image</th>
+        <th>employee_anual_salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of employeeObject">
+        <td>{{item.id}}</td>
+        <td>{{item.employee_name}}</td>
+        <td>{{item.employee_salary}}</td>
+        <td>{{item.employee_age}}</td>
+        <td>{{item.profile_image}}</td>
+        <td>{{item.employee_anual_salary}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<router-outlet></router-outlet>
